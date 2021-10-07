@@ -1,20 +1,20 @@
-// Declarative Pipeline
-pipeline{
-    agent any
+// // Declarative Pipeline
+// pipeline{
+//     agent any
 
-    stages{
-        stage('First shell command'){
-            steps{
-                sh 'echo "Hello Jenkinsfile"'
-            }
-        }
-        stage('Check PWD'){
-            steps{
-                sh 'echo $PWD'
-            }
-        }
-    }
-}
+//     stages{
+//         stage('First shell command'){
+//             steps{
+//                 sh 'echo "Hello Jenkinsfile"'
+//             }
+//         }
+//         stage('Check PWD'){
+//             steps{
+//                 sh 'echo $PWD'
+//             }
+//         }
+//     }
+// }
 
 
 
@@ -31,3 +31,27 @@ pipeline{
 //         echo 'Deploying....'
 //     }
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+// Scripted Pipeline
+node {
+    stage('Build') {
+        sh 'echo "Building.. "'
+    }
+    stage('Test') {
+        sh 'echo "Testing...."'
+    }
+    stage('Deploy') {
+        sh 'echo $PWD'
+    }
+}
