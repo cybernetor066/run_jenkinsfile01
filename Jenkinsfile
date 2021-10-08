@@ -1,57 +1,28 @@
-// // Declarative Pipeline
-// pipeline{
-//     agent any
-
-//     stages{
-//         stage('First shell command'){
-//             steps{
-//                 sh 'echo "Hello Jenkinsfile"'
-//             }
-//         }
-//         stage('Check PWD'){
-//             steps{
-//                 sh 'echo $PWD'
-//             }
-//         }
-//     }
-// }
-
-
-
-
-// // Scripted Pipeline
-// node {
-//     stage('Build') {
-//         echo 'Building....'
-//     }
-//     stage('Test') {
-//         echo 'Building....'
-//     }
-//     stage('Deploy') {
-//         echo 'Deploying....'
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
 // Scripted Pipeline
+// Modify or add these stages with your already existing Jenkinsfile
 node {
     stage('Build') {
         sh 'echo "Building.. "'
     }
-    stage('Test') {
+    stage('Dev') {
         sh 'echo "Testing...."'
     }
-    stage('Deploy') {
-        sh 'echo $PWD'
+
+    // Install the LDAP Package
+    stage('Dev') {
+        sh 'apt install ldap-utils -y'
+    }
+
+
+    stage('Dev') {
+        sh 'ldapsearch -x -h adserver.domain.int -D "user@domain.int" -W -b "cn=users,dc=domain,dc=int"'    // Please replace the variable placeholders with actual values
     }
 }
+
+
+
+
+
+
+
+

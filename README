@@ -1,0 +1,22 @@
+Hello Goodday, this is a Jenkins job repo.
+The Jenkinsfile in this root directory contains a scripted pipeline that queries for active directory users and depending on the users.
+
+For setting the environment variables, use global variables settings plugin inside the Jenkins to hide certain phrases from
+GitHub public repository
+
+
+STEPS
+Go to your Jenkins Dashbaord and create a new project by clicking the New Item menu within Jenkins
+
+Provide a name for your new item (e.g. My-Pipeline) and select Multibranch Pipeline
+
+Click the Add Source button, choose the type of repository you want to use and fill in the details.
+
+Click the Save button and watch your first Pipeline run!
+
+
+
+
+You may need to modify one of the example Jenkinsfile's to make it run with your project. Try modifying the sh command to run the same command you would run on your local machine.
+
+After you have setup your Pipeline, Jenkins will automatically detect any new Branches or Pull Requests that are created in your repository and start running Pipelines for them.
